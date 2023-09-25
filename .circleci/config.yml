@@ -93,7 +93,7 @@ jobs:
             - ./bin/whatgotdone
   lint_sql:
     docker:
-      - image: nixos/nix:2.15.0
+      - image: nixos/nix:2.17.0
     environment:
       CACHIX_NAME: cachix-test
     steps:
@@ -109,7 +109,9 @@ jobs:
       - checkout
       - run:
           name: Lint SQL files
-          command: nix develop -L --command ./dev-scripts/lint-sql
+          command: |
+            set -eux
+            nix develop -L --show-trace --command ./dev-scripts/lint-sql
   e2e:
     docker:
       - image: mcr.microsoft.com/playwright:v1.29.2-focal
