@@ -16,7 +16,7 @@ jobs:
     docker:
       - image: nixos/nix:2.15.0
     environment:
-      CACHIX_NAME: mtlynch-whatgotdone
+      CACHIX_NAME: cachix-test
     steps:
       - run:
           name: Set up Cachix
@@ -42,7 +42,7 @@ jobs:
       - image: nixos/nix:2.15.0
     environment:
       NODE_ENV: production
-      CACHIX_NAME: mtlynch-whatgotdone
+      CACHIX_NAME: cachix-test
     steps:
       - run:
           name: Set up Cachix
@@ -64,7 +64,7 @@ jobs:
     docker:
       - image: nixos/nix:2.15.0
     environment:
-      CACHIX_NAME: mtlynch-whatgotdone
+      CACHIX_NAME: cachix-test
     steps:
       - run:
           name: Set up Cachix
@@ -95,7 +95,7 @@ jobs:
     docker:
       - image: nixos/nix:2.15.0
     environment:
-      CACHIX_NAME: mtlynch-whatgotdone
+      CACHIX_NAME: cachix-test
     steps:
       - run:
           name: Enable Nix flakes
