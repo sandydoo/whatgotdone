@@ -13,5 +13,5 @@ jobs:
         with:
           name: cachix-test
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-      - run: cachix watch-exec cachix-test -- nix develop -L -vvv --show-trace --command ./dev-scripts/lint-sql
-
+      - name: Lint SQL
+        run: cachix watch-exec cachix-test -- nix develop -L -vvv --show-trace --command ./dev-scripts/lint-sql
