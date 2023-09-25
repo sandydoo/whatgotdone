@@ -111,7 +111,7 @@ jobs:
           name: Lint SQL files
           command: |
             set -eux
-            nix develop -L --show-trace --command ./dev-scripts/lint-sql
+            nix develop -L -vvv --show-trace --command ./dev-scripts/lint-sql
   e2e:
     docker:
       - image: mcr.microsoft.com/playwright:v1.29.2-focal
