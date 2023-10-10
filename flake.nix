@@ -18,6 +18,7 @@
       devShells.fast = go_dep.mkShellNoCC {
         packages = [
           go_dep.sqlfluff
+
         ];
 
         shellHook = ''
