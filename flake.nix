@@ -15,7 +15,7 @@
       go_dep = inputs.go_dep.legacyPackages.${system};
     in
     {
-      devShells.fast = go_dep.mkShell {
+      devShells.fast = go_dep.mkShellNoCC {
         packages = [
           go_dep.sqlfluff
         ];
