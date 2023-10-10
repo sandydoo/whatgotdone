@@ -15,6 +15,16 @@
       go_dep = inputs.go_dep.legacyPackages.${system};
     in
     {
+      devShells.fast = go_dep.mkShell.override { stdenv = go_dep.pkgsStatic.stdenv; } {
+        packages = [
+          go_dep.sqlfluff
+        ];
+
+        shellHook = ''
+          sqlfluff --version
+        '';
+      };
+
       devShells.default = go_dep.mkShell.override { stdenv = go_dep.pkgsStatic.stdenv; } {
         packages = [
           go_dep.go_1_19
